@@ -52,6 +52,7 @@ public class RelativeLocatorTest {
         // find the calculate button which is below the weight label
         WebElement calculateButton = driver.findElement(withTagName("input")
                 .below(weightLabel));
+
         calculateButton.click();
 
         // find the read only input below calculate button to verify value
