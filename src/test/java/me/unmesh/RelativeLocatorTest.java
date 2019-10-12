@@ -10,6 +10,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static org.openqa.selenium.support.locators.RelativeLocator.withTagName;
 
@@ -26,19 +30,20 @@ public class RelativeLocatorTest {
 
         driver.manage().window().maximize();
         driver.get("http://cookbook.seleniumacademy.com/mobilebmicalculator.html");
+
     }
 
     @Test
     public void relativeLocatorTest() {
 
         // find the height and weight labels using css selector
-        WebElement heightLLabel = driver.findElement(By.cssSelector("label[for='heightCMS']"));
+        WebElement heightLabel = driver.findElement(By.cssSelector("label[for='heightCMS']"));
         WebElement weightLabel = driver.findElement(By.cssSelector("label[for='weightKg']"));
 
         // find the height input using toRightOf relative locator
         // input is right of height label
         WebElement heightInput =  driver.findElement(withTagName("input")
-                .toRightOf(heightLLabel));
+                .toRightOf(heightLabel));
 
         heightInput.sendKeys("181");
 
