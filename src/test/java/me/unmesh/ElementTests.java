@@ -19,7 +19,7 @@ public class ElementTests {
     WebDriver driver;
 
     @Before
-    public void setUp()
+    public void setUp() {
 
         WebDriverManager.chromedriver().setup();
 
@@ -50,7 +50,7 @@ public class ElementTests {
     }
 
     @Test
-    public void elementRect() throws IOException {
+    public void elementRectTest() throws IOException {
 
         // find the Images link on Google Search home page
         WebElement imagesLink = driver.findElement(By.linkText("Images"));
